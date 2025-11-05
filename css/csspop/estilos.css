@@ -1,0 +1,236 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing:border-box;
+}
+
+
+.contenedor {
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+.contenedor article {
+	line-height: 28px;
+}
+
+.contenedor article h1 {
+	font-size: 30px;
+	text-align: left;
+	padding: 50px 0;
+}
+
+.contenedor article p {
+	margin-bottom: 20px;
+}
+
+.contenedor article .btn-abrir-popup {
+	padding: 0 20px;
+	margin-bottom: 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+	cursor: pointer;
+}
+
+.contenedor article .btn-abrir-popup:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* POPUP */
+/* ------------------------- */
+
+.overlay {
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	visibility: hidden;
+	z-index: 10000;
+}
+
+.overlay.active {
+	visibility: visible;
+}
+
+.popup {
+	background: #F8F8F8;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	padding: 20px;
+	text-align: center;
+	width: 750px;
+	height:900px ;
+	transition: .3s ease all;
+	transform: scale(0.7);
+	opacity: 0;
+	
+    /* Asegúrate de que sea muy alto */
+}
+
+.popup .btn-cerrar-popup {
+	font-size: 16px;
+	line-height: 16px;
+	display: block;
+	text-align: right;
+	transition: .3s ease all;
+	color: #BBBBBB;
+}
+
+.popup .btn-cerrar-popup:hover {
+	color: #000;
+}
+
+.popup h3 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	opacity: 0;
+}
+
+.popup h4 {
+	font-size: 26px;
+	font-weight: 300;
+	margin-bottom: 40px;
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs {
+	opacity: 0;
+}
+
+.popup form .contenedor-inputs input {
+	width: 100%;
+	margin-bottom: 20px;
+	height: 52px;
+	font-size: 18px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+}
+
+.popup form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+.popup form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+/* ------------------------- */
+/* ANIMACIONES */
+/* ------------------------- */
+.popup.active {	transform: scale(1); opacity: 1;  z-index: 1000;}
+.popup.active h3 { animation: entradaTitulo .8s ease .5s forwards; }
+.popup.active h4 { animation: entradaSubtitulo .8s ease .5s forwards; }
+.popup.active .contenedor-inputs { animation: entradaInputs 1s linear 1s forwards; }
+
+@keyframes entradaTitulo {
+	from {
+		opacity: 0;
+		transform: translateY(-25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaSubtitulo {
+	from {
+		opacity: 0;
+		transform: translateY(25px);
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes entradaInputs {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.responsive-heading {
+    text-align: center;         /* Centra el texto */
+    font-size: 5rem;           /* Tamaño de fuente base */
+    margin: 20px 0;            /* Espaciado superior e inferior */
+    margin-bottom: 70px; 
+	color: darkgoldenrod;      /* Añade espacio específico en la parte inferior */
+}
+
+@media (max-width: 768px) {   /* Para pantallas más pequeñas */
+    .responsive-heading {
+        font-size: 3rem;      /* Ajusta el tamaño de la fuente */
+        margin-bottom: 70px;     /* Puedes ajustar el margen inferior también */
+    }
+}
+
+@media (max-width: 480px) {   /* Para dispositivos móviles */
+    .responsive-heading {
+        font-size: 2rem;      /* Ajusta aún más el tamaño de la fuente */
+		margin-bottom: 70px;    /* Ajusta el margen inferior según sea necesario */
+    }
+}
+
+
+.btn-abrir-popup {
+    font-size: 5vw;                     /* Tamaño de fuente en función del ancho de la ventana */
+    color: white;                       /* Color del texto */
+    background-color: darkgoldenrod;    /* Color de fondo */
+    padding: 15px 30px;                 /* Padding superior/inferior y lateral */
+    border-radius: 5px;                 /* Bordes redondeados */
+    cursor: pointer;                     /* Cambia el cursor al pasar sobre el botón */
+    border: none;                       /* Sin borde */
+    transition: background-color 0.3s;  /* Transición suave para el cambio de color */
+}
+
+.btn-abrir-popup:hover {
+    background-color: goldenrod;         /* Color al pasar el mouse */
+}
+
+/* Media Queries para ajustar el tamaño del botón en pantallas más pequeñas */
+@media (max-width: 768px) {
+    .btn-abrir-popup {
+        font-size: 8vw;                /* Aumenta el tamaño de fuente para pantallas más pequeñas */
+        padding: 12px 24px;
+		align-items: center;            /* Ajusta el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-abrir-popup {
+        font-size: 10vw;               /* Aumenta aún más el tamaño de fuente para dispositivos móviles */
+        padding: 10px 20px; 
+		align-items: center;             /* Ajusta el padding */
+    }
+}
+
