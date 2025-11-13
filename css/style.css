@@ -1187,3 +1187,69 @@ FOR TABLETS
   border: 2px solid #ffffff;
 }
 
+/* --- Redes flotantes (ocultables) --- */
+.social-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.social-toggle:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+
+.social-floating {
+  position: fixed;
+  bottom: 90px;
+  right: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.social-floating.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.social-floating a {
+  color: #f5f5f5;
+  font-size: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-floating a:hover {
+  background: #ffb900;
+  color: #050505;
+  transform: scale(1.1);
+}
