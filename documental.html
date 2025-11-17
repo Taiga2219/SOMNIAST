@@ -299,18 +299,7 @@
     </div>
   </div>
 </section>
- <!-- Botón flotante y redes -->
-<div class="social-toggle">
-  <i class="fa fa-share-alt" aria-hidden="true"></i>
-</div>
 
-<div class="social-floating">
-  <a href="https://www.instagram.com/somn.iastudio/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@somnia.studio7" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-</div>
-
-<script src="https://kit.fontawesome.com/4d4f07a4b9.js" crossorigin="anonymous"></script>
 
 <style>
   .swiper-button-next, .swiper-button-prev {
@@ -373,7 +362,28 @@
 
  
    
+<div class="social-floating">
+  <a href="https://www.instagram.com/somn.iastudio/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@somnia.studio7" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+</div>
 
+<script src="https://kit.fontawesome.com/4d4f07a4b9.js" crossorigin="anonymous"></script>
+
+<script>
+  const toggleBtn = document.querySelector('.social-toggle');
+  const socialBox = document.querySelector('.social-floating');
+  let visible = false;
+
+  toggleBtn.addEventListener('click', () => {
+    visible = !visible;
+    socialBox.classList.toggle('show', visible);
+  });
+</script>
+
+
+<!-- Iconos FontAwesome -->
+<script src="https://kit.fontawesome.com/a2e0adab4d.js" crossorigin="anonymous"></script>
 
 
 
