@@ -1253,3 +1253,14 @@ FOR TABLETS
   color: #050505;
   transform: scale(1.1);
 }
+
+/* FIX PARA ICONOS FONT AWESOME */
+i[class^="fa-"], i[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+}
+
+i.fa-brands {
+  font-family: "Font Awesome 6 Brands" !important;
+  font-weight: 400 !important;
+}
